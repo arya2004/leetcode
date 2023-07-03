@@ -1,10 +1,13 @@
-﻿namespace LeetCode
+﻿using LeetCode.Easy;
+
+namespace LeetCode
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            IsPalindrome isPalindrome = new IsPalindrome();
+            Console.WriteLine("{0}", isPalindrome.main(1221));
         }
     }
 }
