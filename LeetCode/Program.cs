@@ -1,4 +1,5 @@
 ﻿using LeetCode.Easy;
+using LeetCode.Medium;
 
 namespace LeetCode
 {
@@ -8,10 +9,8 @@ namespace LeetCode
         {
            // IsPalindrome isPalindrome = new IsPalindrome();
             //Console.WriteLine("{0}", isPalindrome.main(1221));
-            string a = "A man, a plan, a canal: Panama";
-            Fibonacci fibonacci = new Fibonacci();
-
-            Console.WriteLine("{0}", fibonacci.Main(10));
+            int[] temp = { 1,5,233,7};
+    
         }
     }
 }
