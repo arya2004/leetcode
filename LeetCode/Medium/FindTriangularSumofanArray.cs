@@ -8,18 +8,18 @@ namespace LeetCode.Medium
 {
     public class FindTriangularSumofanArray
     {   
-        //incoplete
+        //better possible
         public int TriangularSum(int[] nums)
-        {   
-            
-            //int baseNum = 1;
-            //int numToReturn = nums[0];
-            //for (int col = 1; col <= nums.Length; col++)
-            //{
-            //    numToReturn = (numToReturn + (baseNum * nums[col])) % 10;
-            //    baseNum = baseNum *(nums.Length - col)/ col;
-            //}
-            //return numToReturn;
+        {
+
+            for (int i = nums.Length - 1; i >= 0; i--)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    nums[j - 1] = (nums[j - 1] + nums[j]) % 10;
+                }
+            }
+            return nums[0];
         }
     }
 }
