@@ -1,6 +1,6 @@
 # LeetCode 
 
-In C# because r/ProgrammerHumor
+Switched to cpp :(
 
 Also I don't like Java because r/ProgrammerHumor
 
