@@ -23,26 +23,14 @@
 #include <utility>
 #include <vector>
 
-#include "Easy.cpp"
+
 
 using namespace std;
 
-//struct TreeNode {
-//    int val;
-//    TreeNode* left;
-//    TreeNode* right;
-//    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-//    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-//    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
-//    
-//};
+
+class Hard {
+public:
+   
 
 
-int main()
-{   
-    vector<int> a = { 1,2,4,4,5 };
-    int b = 55;
-    Easy e;
-    cout << e.myPow(4.0, 3);
-}
-
+};

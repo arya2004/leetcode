@@ -127,8 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Easy.cpp" />
+    <ClCompile Include="Hard.cpp" />
     <ClCompile Include="LeetCodeinCPP.cpp" />
-    <ClCompile Include="Pow(x, n).cpp" />
+    <ClCompile Include="Medium.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinarySearch.h" />
+    <ClInclude Include="Easy.h" />
+    <ClInclude Include="Hard.h" />
+    <ClInclude Include="Medium.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

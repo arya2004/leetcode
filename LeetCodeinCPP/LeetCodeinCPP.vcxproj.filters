@@ -13,22 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Easy">
-      <UniqueIdentifier>{320fe260-f5d2-4086-b172-7051f06c3192}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Medium">
-      <UniqueIdentifier>{4349b2fe-3ced-434d-925a-6a2b88669f64}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Hard">
-      <UniqueIdentifier>{0739f3aa-2aa5-42f5-9935-c78bf924ea3f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LeetCodeinCPP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pow(x, n).cpp">
-      <Filter>Source Files\Medium</Filter>
+    <ClCompile Include="Easy.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Medium.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinarySearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Easy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Medium.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
