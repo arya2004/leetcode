@@ -40,9 +40,11 @@ using namespace std;
 
 int main()
 {   
-    vector<int> a = { 1,2,4,4,5 };
+    /*vector<int> a = { 1,2,4,4,5 };
     int b = 55;
     Easy e;
-    cout << e.myPow(4.0, 3);
+    cout << e.myPow(4.0, 3);*/
+    cout << 7 + "Data Structures";
+    int a = 19;
 }
 

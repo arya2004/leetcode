@@ -95,6 +95,34 @@ public:
         return ans;
     }
 
-
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        queue<TreeNode*> q;
+        vector<vector<int>> ans;
+        bool flag = false;
+        if (root = NULL) return ans;
+        q.push(root);
+        while (!q.empty())
+        {
+            int size = q.size();
+            vector<int> level;
+            for (int i = 0; i < size; i++)
+            {
+                TreeNode* temp = q.front();
+                q.pop();
+                if (temp->left ) q.push(temp->left);
+                if (temp->right ) q.push(temp->right);
+                if (flag)
+                {
+                    level.insert(level.begin(), temp->val);
+                }
+                else {
+                    level.push_back(temp->val);
+                }
+            }
+            flag = !flag;
+            ans.push_back(level);
+        }
+        return ans;
+    }
 
 };

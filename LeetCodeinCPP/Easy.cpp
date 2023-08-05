@@ -162,4 +162,73 @@ public:
         return height;
     }
 
+    int helperIsBalanced(TreeNode* root) {
+        if (root == NULL) return 0;
+        
+            return 1 + max(helperIsBalanced(root->left), helperIsBalanced(root->right));
+    
+    }
+
+    bool isBalanced(TreeNode* root) {
+        if (root == NULL) return true;
+
+        int left = helperIsBalanced(root->left);
+        int right = helperIsBalanced(root->right);
+
+        return abs(left - right) <= 1 && isBalanced(root->left) && isBalanced(root->right);
+    }
+    //time : o(nodes)
+    //space: o(nodes)  
+    int maxi = 0;
+    int _diameterOfBinaryTree(TreeNode* root)
+    {   
+        if (root == NULL) return 0;
+
+        int lh = _diameterOfBinaryTree(root->left);
+        int rh = _diameterOfBinaryTree(root->right);
+        maxi = max(maxi, lh + rh);
+
+        return 1 + max(lh, rh);
+
+    }
+
+    int diameterOfBinaryTree(TreeNode* root) {
+        _diameterOfBinaryTree(root);
+        return maxi;
+    }
+
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        if (p == NULL || q == NULL)
+        {
+            return p == q;
+        }
+        bool current = p->val == q->val;
+        bool l = isSameTree(p->left, q->left);
+        bool r = isSameTree(p->right, q->right);
+        return current && l && r;
+
+    }
+
+    TreeNode* searchBST(TreeNode* root, int val) {
+        if (root == NULL) return NULL;
+
+
+        while (root != NULL && root->val != val)
+        {
+
+            if (root->val > val)
+            {
+                root = root->left;
+            }
+            else if (root->val < val)
+            {
+                root = root->right;
+            }
+
+        }
+        return root;
+
+    }
+
+    
 };

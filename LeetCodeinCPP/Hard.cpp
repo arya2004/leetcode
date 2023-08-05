@@ -23,6 +23,15 @@
 #include <utility>
 #include <vector>
 
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+
+};
 
 
 using namespace std;
@@ -30,7 +39,24 @@ using namespace std;
 
 class Hard {
 public:
-   
+    int maxi = INT_MIN;
+
+    int _maxPathSum(TreeNode* root) {
+        if (root == NULL) return 0;
+
+        int leftsum = _maxPathSum(root->left);
+        if (leftsum < 0) leftsum = 0;
+        int rightSUm = _maxPathSum(root->right);
+        if (rightSUm < 0) rightSUm = 0;
+
+        maxi = max(maxi, leftsum + rightSUm + root->val);
+        return root->val + max(leftsum, rightSUm);
+    }
+
+    int maxPathSum(TreeNode* root) {
+        _maxPathSum(root);
+        return maxi;
+    }
 
 
 };
