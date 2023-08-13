@@ -23,7 +23,8 @@
 #include <utility>
 #include <vector>
 
-#include "Easy.cpp"
+//#include "Easy.cpp"
+#include "Medium.cpp"
 
 using namespace std;
 
@@ -37,6 +38,30 @@ using namespace std;
 //    
 //};
 
+vector<int> bfsOfGraph(int V, vector<int> adj[]) {
+    int visited[10] = {0};
+    visited[0] = 1;
+    queue<int> q;
+    q.push(0);
+    vector<int> ans;
+    while (!q.empty())
+    {
+        int node = q.front();
+        q.pop();
+        ans.push_back(node);
+        for (auto a: adj[node])
+        {
+            if (!visited[a])
+            {
+                visited[a] = 1;
+                q.push(a);
+            }
+            
+        }
+    }
+
+    return ans;
+}
 
 int main()
 {   
@@ -44,7 +69,9 @@ int main()
     int b = 55;
     Easy e;
     cout << e.myPow(4.0, 3);*/
-    cout << 7 + "Data Structures";
-    int a = 19;
+    Medium m;
+    vector<vector<int>> isConnected = { {1, 0, 0, 1},{0, 1, 1, 0},{0, 1, 1, 1},{1, 0, 1, 1} };
+    cout << m.findCircleNum(isConnected);
+
 }
 

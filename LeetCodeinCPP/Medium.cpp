@@ -37,7 +37,17 @@ struct TreeNode {
 };
 
 
+
 class Medium {
+    struct TreeNode {
+        int val;
+        TreeNode* left;
+        TreeNode* right;
+        TreeNode() : val(0), left(nullptr), right(nullptr) {}
+        TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+        TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+
+    };
 public:
     double myPow(double x, int n) {
 
@@ -123,6 +133,74 @@ public:
             ans.push_back(level);
         }
         return ans;
+    }
+
+    TreeNode* insertIntoBST(TreeNode* root, int val) {
+        if (root == NULL) return new TreeNode(val);
+        TreeNode* _root = root;
+        while (true)
+        {
+            if (val < _root->val)
+            {
+                if (_root->left == NULL)
+                {
+                    _root->left = new TreeNode(val);
+                    break;
+                }
+                else {
+                    _root = _root->left;
+                }
+            }
+            else if (val > _root->val)
+            {
+                if (_root->right == NULL)
+                {
+                    _root->right = new TreeNode(val);
+                    break;
+                }
+                else {
+                    _root = _root->right;
+                }
+            }
+        }
+        return root;
+    }
+
+    
+    int findCircleNum(vector<vector<int>>& isConnected) {
+        int count = 0;
+        vector<int> visitd(isConnected.size(), 0);
+        
+        for (int i = 0; i < isConnected.size(); i++)
+        {   
+            
+            if (visitd[i] == 0)
+            {   
+                queue<int> q;
+                q.push(i);
+                count++;
+                while (!q.empty())
+                {
+                    int temp = q.front();
+                    q.pop();
+                    visitd[temp] = 1;
+                    for (int a = 0; a < isConnected[temp].size(); a++)
+                    {
+                        if (visitd[a] != 1 && isConnected[temp][a] == 1 && a != temp)
+                        {   
+                            q.push(a);
+                            visitd[a] = 1;
+                        }
+                    }
+                }
+
+            }
+        }
+        return count;
+    }
+
+    int orangesRotting(vector<vector<int>>& grid) {
+
     }
 
 };

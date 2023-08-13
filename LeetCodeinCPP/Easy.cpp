@@ -230,5 +230,22 @@ public:
 
     }
 
-    
+
+
+    bool evaluateTree(TreeNode* root) {
+        if (root == NULL) return NULL;
+
+        int sign = root->val;
+        bool a = evaluateTree(root->left);
+        bool b = evaluateTree(root->right);
+        if (sign == 2)
+        {
+            return (a || b);
+        }
+        else if (sign == 3)
+        {
+            return (a && b);
+        }
+        return root->val;
+    }
 };
