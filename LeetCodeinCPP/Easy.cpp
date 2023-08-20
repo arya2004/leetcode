@@ -230,7 +230,29 @@ public:
 
     }
 
+    int maximum69Number(int num) {
+        int sixPos = -1;
+        int c = 0;
+        int temp = num;
 
+        while (temp > 0)
+        {
+            if (temp % 10 == 6)
+            {
+                sixPos = c;
+            }
+            temp = temp / 10;
+            c++;
+
+        }
+        if (sixPos != -1)
+        {
+            return num + 3 * pow(10, sixPos);
+        }
+
+        return num;
+
+    }
 
     bool evaluateTree(TreeNode* root) {
         if (root == NULL) return NULL;
@@ -247,5 +269,89 @@ public:
             return (a && b);
         }
         return root->val;
+    }
+
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+        int initCOlor = image[sr][sc];
+        int row[4] = { 0,0,-1,1 };
+        int col[4] = { 1,-1,0,0 };
+        int m = image.size();
+        int n = image[0].size();
+        vector<vector<int>> visited = image;
+        queue<pair<int, int>> q;
+        q.push({ sr,sc });
+        visited[sr][sc] = -1;
+        image[sr][sc] = color;
+        while (!q.empty())
+        {
+            pair<int, int> temp = q.front();
+            q.pop();
+            
+            for (int i = 0; i < 4; i++)
+            {
+                int ex = temp.first + row[i];
+                int vi = temp.second + col[i];
+                if (ex >= 0 && ex < m && vi >= 0 && vi < n && image[ex][vi] == initCOlor && visited[ex][vi] != -1)
+                {
+                    q.push({ ex,vi });
+                    visited[ex][vi] = -1;
+                    image[ex][vi] = color;
+                }
+            }
+        }
+        return image;
+    }
+
+    vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
+        int m = mat.size();
+        int n = mat[0].size();
+        vector<vector<int>> distance(m, vector<int>(n, -1));
+        queue<pair<int, int>> q;
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (mat[i][j] == 0)
+                {
+                    distance[i][j] = 0;
+                    q.push({ i,j });
+                }
+            }
+        }
+        int r[4] = { 0,0,-1,1 };
+        int c[4] = { 1,-1,0,0 };
+        while (!q.empty())
+        {
+            pair<int, int> temp = q.front();
+            q.pop();
+            for (int i = 0; i < 4; i++)
+            {
+                int em = temp.first + r[i];
+                int vi = temp.second + c[i];
+                if (em >= 0 && em < m && vi >= 0 && vi < n && distance[em][vi] == -1)
+                {
+                    q.push({ em,vi });
+                    distance[em][vi] = distance[temp.first][temp.second] + 1;
+                }
+            }
+
+        }
+
+        return distance;
+
+    }
+    //dp
+    int climbStairs(int n) {
+        if (n == 1) return 1;
+        int dp[3];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++)
+        {
+            dp[2] = dp[1] + dp[0];
+            dp[0] = dp[1];
+            dp[1] = dp[2];
+        }
+        return dp[1];
     }
 };
