@@ -1,5 +1,4 @@
 // LeetCodeinCPP.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <algorithm>
 #include <array>
@@ -22,9 +21,10 @@
 #include <unordered_set>
 #include <utility>
 #include <vector>
+#include "test.c"
 
 //#include "Easy.cpp"
-#include "Medium.cpp"
+//#include "Medium.cpp"
 
 using namespace std;
 
@@ -69,9 +69,10 @@ int main()
     int b = 55;
     Easy e;
     cout << e.myPow(4.0, 3);*/
-    Medium m;
+ /*   Medium m;
     vector<vector<int>> isConnected = { {1, 0, 0, 1},{0, 1, 1, 0},{0, 1, 1, 1},{1, 0, 1, 1} };
-    cout << m.findCircleNum(isConnected);
-
+    cout << m.findCircleNum(isConnected);*/
+    mn();
+    return 0;
 }
 

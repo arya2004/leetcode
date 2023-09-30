@@ -354,4 +354,21 @@ public:
         }
         return dp[1];
     }
+
+    string removeOuterParentheses(string s) {
+        stack<char> _s;
+        string to_return;
+        for (int i = 0; i < s.length(); i++)
+        {   
+            if (s[i] == ')') _s.pop();
+                
+            
+            if (_s.size() > 0) to_return += (s[i]);
+
+            if (s[i] == '(')  _s.push('(');
+  
+        }
+        return to_return;
+
+    }
 };
