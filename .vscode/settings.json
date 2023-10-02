@@ -4,6 +4,7 @@
         "forward_list": "cpp",
         "functional": "cpp",
         "algorithm": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "vector": "cpp"
     }
 }
