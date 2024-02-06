@@ -91,6 +91,7 @@ void Vectors()
        cout << it;
     }
     
+    
     //delete
     v.erase(v.begin() + 1); // erases 2nd elemetn
     v.erase(v.begin(), v.begin() + 4); // end isnt deleted
@@ -160,6 +161,7 @@ void Queue()
 
     q.back(); //last
     q.front(); //front
+    
 }
 
 void PriQ(){
@@ -209,7 +211,7 @@ void MiltiSet()
     int c= s.count(2); // any no
 
     s.erase(s.find(1)); //delete 1 occurence
-    s.erase(s.find(1), s.find(1)  +1 );//
+    //s.erase(s.find(1), s.find(1) +1);//
 }
 
 void UnorderSet()
@@ -223,9 +225,47 @@ void Map()
 {
     map<int,int> m;
     //key value pair
+    m[1] = 2;
+    m.emplace(3,1);
+    m.insert({5,4});
+    //sorted order of key
+    for(auto it: m){
+        cout << it.first ;
+    }
+    cout << m[1]; // 0/null if not exist
 
+    //MultiMap stores duplicate KEys
+    //Unorder Map not sorted o(1)
 }
 
+bool somp(pair<int,int> a, pair<int,int> b)
+{
+    if(a.second < b.second) return true;
+    if(a.second > b.second) return false;
+
+    if(a.first > a.second) return true;
+    return false;
+}
+
+void Algo()
+{
+    int a[13];
+    sort(a, a + 4);
+    //sort(a, a + 5, greater<int>); //builtin comparator
+
+    pair<int,int> a[] = {{1,2}, {3,4}};
+    sort(a , a + 1, somp);
+    
+    string s = "12,3";
+    //sort before t print all 
+    do
+    {
+        cout << s << endl;
+    } while (next_permutation(s.begin(), s.end()));
+    
+    int maxi = *max_element(a, a + 1);
+    //min_element
+}
 
 int main()
 {
