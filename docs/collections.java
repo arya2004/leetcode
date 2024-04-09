@@ -1,3 +1,5 @@
+package docs;
+
 
 import java.util.*;
 
@@ -246,6 +248,7 @@ public class collections {
         
         int a[] = new int[5];
         int idex = Arrays.binarySearch(a, 2);
+        int e = Arrays.binarySearch(a, 0, 2, 2);
         //need array to be ssroted
 
         Arrays.sort(a);
