@@ -123,7 +123,7 @@ public class EmployeeDAO {
             con.close();  
             System.out.println("\n\n\n\n\n\nNOICEEEEEEEEE");
         }catch(Exception e){ 
-            System.out.println(e.getMessage());
+            System.out.println(e);
             System.out.println("\n\n\n\n\n\n\nFUCKKKKKKKKKKKKKKKKK");
         }  
             
