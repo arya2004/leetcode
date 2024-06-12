@@ -1,5 +1,5 @@
 
-package contest;
+package Codeforces.contest;
 
 import java.util.*;
  

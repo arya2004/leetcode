@@ -1,4 +1,4 @@
-package biweekly_contest_132;
+package Codeforces.biweekly_contest_132;
 
 
 import java.util.*;
