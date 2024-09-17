@@ -8,6 +8,7 @@ public class C1947 {
         int t = scanner.nextInt();
         List<String> results = new ArrayList<>();
         
+     
         for (int i = 0; i < t; i++) {
             int n = scanner.nextInt();
             String b = scanner.next();
