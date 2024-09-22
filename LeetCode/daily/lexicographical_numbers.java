@@ -12,6 +12,7 @@ public class lexicographical_numbers {
      
 
         l.sort( (a,b) -> a.toString().compareTo(b.toString()));
+        
 
         return l;
 
