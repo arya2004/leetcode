@@ -238,6 +238,8 @@ void Map()
     //Unorder Map not sorted o(1)
 }
 
+
+//aa is smaller than b assumed
 bool somp(pair<int,int> a, pair<int,int> b)
 {
     if(a.second < b.second) return true;
@@ -255,6 +257,13 @@ void Algo()
 
     pair<int,int> a[] = {{1,2}, {3,4}};
     sort(a , a + 1, somp);
+
+    int num =  7;
+    int cnt = __builtin_popcount(num);
+
+    long long num =  7345346346;
+    int cnt = __builtin_popcountll(num);
+
     
     string s = "12,3";
     //sort before t print all 
@@ -266,6 +275,7 @@ void Algo()
     int maxi = *max_element(a, a + 1);
     //min_element
 }
+
 
 int main()
 {
